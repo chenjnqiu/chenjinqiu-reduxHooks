@@ -1,0 +1,29 @@
+{
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage", // 按需加载
+          "corejs": 3, // Babel 建议使用 useBuiltIns 选项时显式设置 core-js 版本
+          "targets": {
+              "chrome": "60",
+              "firefox": "60",
+              "ie": "9",
+              "safari": "10",
+              "edge": "17"
+          }
+        }
+      ],
+      "@babel/preset-react" // 解析 JSX 语法
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+            "libraryName": "antd", //antd按需引入
+            "style": true
+        }
+      ],
+      "@babel/plugin-transform-runtime"
+    ]
+  }
