@@ -7,7 +7,6 @@ import '@asset/styles/common.global.less'
 
 const App = () => {
     const store= getStore() // 获取store值
-    console.log(1)
     return (
         <ReduxContext.Provider value={store}>
           <Router>
