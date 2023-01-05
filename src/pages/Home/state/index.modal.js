@@ -30,17 +30,13 @@ export default {
                     data: ['test1','test2']
                 }
             })
-            dispatch({
-                type: 'home/changeTestDispatch',
-                payload: {
-                    visible: !state.home.visible
-                }
-            })
         },
         changeTestDispatch: (payload, { state, dispatch })=>{
             dispatch({
                 type: 'home/UPDATE_TEST',
-                payload,
+                payload: {
+                    visible: !state.home.visible
+                }
             })
         },
     }
