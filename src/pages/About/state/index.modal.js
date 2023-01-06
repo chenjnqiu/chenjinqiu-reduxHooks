@@ -7,6 +7,20 @@ const getInitialState = () => {
 export default {
     namespace: 'about',
     state: getInitialState(),
+    subscriptions: {
+        setup({ dispatch, history }) {
+          history.listen(({ pathname }) => {
+            if (pathname === '/about') {
+                dispatch({
+                    type: 'about/UPDATE_LOADING',
+                    payload: {
+                        data: ['test1','test2']
+                    }
+                })
+            }
+          });
+        },
+    },
     reducer: {
         UPDATE_LOADING: (state, action) => {
             return Object.assign({}, state, { data: action.payload.data })

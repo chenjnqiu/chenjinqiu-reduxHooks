@@ -10,6 +10,24 @@ const getInitialState = () => {
 export default {
     namespace: 'home',
     state: getInitialState(),
+    subscriptions: {
+        setup({ dispatch, history }) {
+            console.log(history)
+            history.push('/about')
+            // history.listen(({ pathname }) => {
+            //     console.log(1)
+            //     console.log(pathname)
+            //     if (pathname === '/') {
+            //         dispatch({
+            //             type: 'home/UPDATE_LOADING',
+            //             payload: {
+            //                 data: ['test1','test2']
+            //             }
+            //         })
+            //     }
+            //   });
+        },
+    },
     reducer: {
         UPDATE_LOADING: (state, action) => {
             return Object.assign({}, state, { data: action.payload.data })
