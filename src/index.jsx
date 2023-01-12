@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { render } from 'react-dom'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import { Home, About } from '@page'
-import getStore, { ReduxContext } from './store'
+import CreateStore, { ReduxContext } from './store'
 import '@asset/styles/common.global.less'
 
+const createStore = new CreateStore()
+
 const App = () => {
-    const store= getStore() // 获取store值
+    const store = createStore.getStore(useReducer)
     return (
         <ReduxContext.Provider value={store}>
           <Router>

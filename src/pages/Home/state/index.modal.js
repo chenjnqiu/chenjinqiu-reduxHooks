@@ -12,7 +12,6 @@ export default {
     state: getInitialState(),
     subscriptions: {
         setup({ dispatch, history }) {
-            console.log(history)
             history.push('/about')
             // history.listen(({ pathname }) => {
             //     console.log(1)

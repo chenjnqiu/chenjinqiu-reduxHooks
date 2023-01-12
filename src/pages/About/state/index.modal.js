@@ -9,8 +9,8 @@ export default {
     state: getInitialState(),
     subscriptions: {
         setup({ dispatch, history }) {
-          history.listen(({ pathname }) => {
-            if (pathname === '/about') {
+          history.listen(({location, action}) => {
+            if (location.pathname === '/about') {
                 dispatch({
                     type: 'about/UPDATE_LOADING',
                     payload: {
@@ -19,6 +19,7 @@ export default {
                 })
             }
           });
+          
         },
     },
     reducer: {
@@ -34,7 +35,7 @@ export default {
             dispatch({
                 type: 'about/UPDATE_LOADING',
                 payload: {
-                    data: ['test1','test2']
+                    data: ['1','2']
                 }
             })
         },
