@@ -5,8 +5,11 @@ import { Home, About } from '@page'
 import createStore, { ReduxContext } from './store'
 import '@asset/styles/common.global.less'
 
+const { getStore } = createStore({})
+
 const App = () => {
-    const store = createStore.getStore()
+    // 获取store值
+    const store = getStore()
     return (
         <ReduxContext.Provider value={store}>
           <Router>

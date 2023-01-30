@@ -170,4 +170,4 @@ const createStore = () => {
     return createStore
 }
 
-export default createStore()
+export default createStore
