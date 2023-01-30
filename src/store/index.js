@@ -1,3 +1,4 @@
+import { useReducer } from 'react'
 import { createHashHistory } from 'history'
 import combineReducers from './combineReducers';
 //导出context
@@ -163,4 +164,10 @@ class CreateStore {
     }
 }
 
-export default CreateStore
+const createStore = () => {
+    const createStore = new CreateStore()
+    createStore.getStore = createStore.getStore.bind(createStore, useReducer)
+    return createStore
+}
+
+export default createStore()
